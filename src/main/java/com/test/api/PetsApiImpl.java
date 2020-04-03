@@ -37,6 +37,7 @@ public class PetsApiImpl implements PetsApi {
                                     .add("content-type", "application/octet-stream"))));
         } catch (Throwable e) {
             log.error("", e);
+            handler.handle(Future.failedFuture(e));
         }
     }
 
