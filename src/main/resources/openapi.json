@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Spec for binary request",
+    "license": {
+      "name": "Apache 2.0 License"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/v1"
+    }
+  ],
+  "paths": {
+    "/pets": {
+      "post": {
+        "tags": [
+          "pets"
+        ],
+        "summary": "Create a pet",
+        "operationId": "createPets",
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Null response"
+          }
+        },
+        "x-contentType": "application/octet-stream",
+        "x-accepts": "application/json",
+        "x-serviceid": "createPets",
+        "x-serviceid-varname": "CREATEPETS_SERVICE_ID"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
